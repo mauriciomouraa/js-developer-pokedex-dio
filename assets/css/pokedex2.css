@@ -6,7 +6,7 @@
 }
 
 .paginaPokemon {
-    height: 18rem;
+    height: 24rem;
     border-radius: 2rem;
     position: relative;
     z-index: 1;
@@ -21,19 +21,22 @@
     z-index: 2;
     padding: 1rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    bottom: 5rem;
+    bottom: 18rem;
 }
 
 .imagePokemonPagina {
-    position: absolute;
-    align-self: center;
-    z-index: 3;
-    border-style: none;
-    height: 9rem;
-    padding: 0;
-    top: 7.5rem;
-    left: 8rem;
-   
+    position: relative;
+    z-index: 3;  
+    display: flex;         
+    justify-content: center;
+    align-items: flex-start;    
+    max-width: 100%;       
+    bottom: 16rem;
+}
+
+.imagePokemonPagina img {
+    max-width: 100%;
+    height: 10rem; 
 }
 
 .paginaPokemon .numberPagina {
@@ -76,11 +79,11 @@
 
 .backgroundPokemonPagina {
     position: absolute;
-    right: 3rem;
+    bottom: 1;
+    right: 0;
     width: 5.5rem;
     height: 6rem;
     z-index: 1; 
-    
 } 
 
 .backgroundPokemonPagina img {
