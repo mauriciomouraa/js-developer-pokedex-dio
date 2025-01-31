@@ -24,9 +24,10 @@ h1 {
     width: 100vw;
     height: 100vh;
     padding: 1rem;
-    background-color: #fff;
+    background-color: #ffffffee;
     
 }
+
 
 @media screen and (min-width: 992px) {
     .content {

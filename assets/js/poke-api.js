@@ -9,6 +9,7 @@ function convertPokeApiDetailToPokemon (pokeDetail) {
     const [type] = types
 
     pokemon.photo = pokeDetail.sprites.other.dream_world.front_default
+    // pokemon.photo = pokeDetail.sprites.other.home.front_default
     pokemon.types = types
     pokemon.type = type
 
