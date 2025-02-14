@@ -1,26 +1,53 @@
-/* Pagina 2 */
+/* Modal */
 
 .content h2 {
-    padding: 0 1.5rem;
     font-size: 2.255rem;
+    margin: 0;
 }
 
 .paginaPokemon {
-    height: 24rem;
+    height: 26rem;
     border-radius: 2rem;
     position: relative;
     z-index: 1;
-    padding: 0.25rem;
-    /* margin: 1rem; */
+    padding: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
+#modalPokemon {
+    display: none;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.close {
+    color: #ffffff;
+    font-size: 34px;
+    font-weight: 200;
+    position: absolute;
+    top: 12px;
+    left: 30px;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    filter: brightness(3);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    color: #ffffffa8;
+  }
+
 .paginaPokemonBottom {
+    height: 20rem;
     background-color: #fff;
     border-radius: 2rem;
     position: relative;
     z-index: 2;
-    padding: 1rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
     bottom: 18rem;
 }
 
@@ -32,11 +59,12 @@
     align-items: flex-start;    
     max-width: 100%;       
     bottom: 16rem;
+    overflow: hidden;
 }
 
 .imagePokemonPagina img {
     max-width: 100%;
-    height: 10rem; 
+    height: 12rem; 
 }
 
 .paginaPokemon .numberPagina {
@@ -44,58 +72,199 @@
     color: #000000;
     opacity: .3;
     text-align: right;
-    font-size: .623rem;
+    font-size: 1.050rem;
 }
 
 .paginaPokemon .namePagina {
     color: #fff;
-    margin-bottom: 0;
     text-transform: capitalize;
+    text-align: left;
+    margin: 2rem 0 0 0;
 }
 
 .paginaPokemon .detailPagina {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     align-items: center;
     justify-content: space-between;
     position: relative;
+    padding: .25rem;
 }
 
 .paginaPokemon .typesPagina {
-    padding: 0;
     margin: 0;
     list-style: none;
+    display: flex;
 }
 
-.paginaPokemon .detailPagina .typesPagina .typePagina {
+.typePagina {
     border-radius: 1rem;
     color: #fff;
-    padding: .25rem .5rem;
-    margin: .25rem 0rem;
-    font-size: .625rem;
+    padding: .3rem .7rem;
+    margin: .3rem .25rem;
+    font-size: 1rem;
     filter: brightness(1.15);
     text-align: center;
 }
 
 .backgroundPokemonPagina {
-    position: absolute;
-    bottom: 1;
-    right: 0;
-    width: 5.5rem;
-    height: 6rem;
+    position: relative;
     z-index: 1; 
+    max-width: 100%; 
+    display: flex;
+    justify-content: flex-end;
 } 
 
 .backgroundPokemonPagina img {
+    margin: 26px;
+    list-style: none;
     opacity: .32; 
-    height: 10rem;
+    height: 15rem;
+    max-width: 100%; 
+    transform: translateY(-35px);
+}
+
+.aboutDetails, .aboutBaseStats {
+    display: flex; 
+    align-items: flex-start; 
 }
 
 .typePaginaBottomAbout {
     list-style: none;
+    font-weight: 300;
+    white-space: nowrap;
 }
 
-.typePaginaBottomBreeding {
+.typePaginaBottomAboutResponse {
     list-style: none;
+    font-weight: 400;
+    
 }
 
+.abilityResponse {
+    text-transform: capitalize;
+}
+
+.typePaginaBottomAbout li,.typePaginaBottomAboutResponse li, .typePaginaBottomBaseStats li, .typePaginaBottomBaseStatsResponse li{
+    margin-bottom: 5px;
+    
+}
+
+.typePaginaBottomBaseStats {
+    list-style: none;
+    font-weight: 300;
+}
+
+.typePaginaBottomBaseStatsResponse {
+    list-style: none;
+    font-weight: 400;
+}
+
+.typePaginaBottomBaseStatsBar {
+    list-style: none;
+    flex-grow: 1;
+    padding: .4rem 0rem 0rem 1rem;
+}
+
+.progressBarHp, .progressBarDf, .progressBarAt {
+    width: 60%;
+    height: 4px; 
+    /* background-color: #dbdada;  */
+    border-radius: 5px; 
+    margin-bottom: 20px;
+}
+
+.progressBarHp:before {
+    content: '';
+    display: block;
+    width: var(--dataProgressHp, 45%);
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0.550); 
+    border-radius: 5px; 
+    transition: width 0.3s ease-in-out;
+}
+
+.progressBarDf:before {
+    content: '';
+    display: block;
+    width: var(--dataProgressDf, 45%);
+    height: 100%;
+    background-color: rgba(0, 128, 0, 0.550); 
+    border-radius: 5px; 
+    transition: width 0.3s ease-in-out;
+}
+
+.progressBarAt:before {
+    content: '';
+    display: block;
+    width: var(--dataProgressAt, 45%); 
+    height: 100%;
+    background-color: rgba(0, 0, 255, 0.550); 
+    border-radius: 5px; 
+    transition: width 0.3s ease-in-out;
+}
+
+.about {
+    font-weight: 500;
+}
+
+@media screen and (min-width: 375px) {
+    .paginaPokemon {
+        margin: 0.5rem 2rem 0 2rem;
+        
+    }
+    .paginaPokemonBottom {
+        margin: 0.5rem 2rem 0 2rem;
+    }
+
+}
+
+@media screen and (min-width: 576px) {
+    .paginaPokemon {
+        margin: 0.5rem 6rem 0rem 6rem;
+    }
+    .paginaPokemonBottom {
+        margin: 0.5rem 6rem 0rem 6rem;
+    }
+    .imagePokemonPagina{
+        margin: 0.5rem 6rem 0rem 6rem;
+    }
+
+}
+
+@media screen and (min-width: 633px) {
+    .paginaPokemon {
+        margin: 0.5rem 8rem 0rem 8rem;
+    }
+    .paginaPokemonBottom {
+        margin: 0.5rem 8rem 0rem 8rem;
+    }
+    .imagePokemonPagina{
+        margin: 0.5rem 8rem 0rem 8rem;
+    }
+
+}
+
+@media screen and (min-width: 992px) {
+    .paginaPokemon {
+        margin: 1rem 10rem 0 10rem;
+    }
+    .paginaPokemonBottom {
+        margin: 1rem 10rem 0 10rem;
+    }
+    .imagePokemonPagina{
+        margin: 1rem 10rem 0 10rem;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .paginaPokemon {
+        margin: 1rem 40rem 0 40rem;
+    }
+    .paginaPokemonBottom {
+        margin: 1rem 40rem 0 40rem;
+    }
+    .imagePokemonPagina{
+        margin: 1rem 40rem 0 40rem;
+    }
+}
