@@ -107,16 +107,17 @@ function loadPokemonAbout(pokemon) {
         document.querySelector(".progressBarAt").style.setProperty('--dataProgressAt', `${pokemon.attack}%`); 
         document.querySelector(".progressBarDf").style.setProperty('--dataProgressDf', `${pokemon.defense}%`); 
         backArrow = document.querySelector('.close'); 
-        
+        document.body.classList.add("no-scroll");
     })
 }
 
 buttonPokemonId.addEventListener('click', (event) => {
-    const button = event.target.closest('BUTTON'); // Tenta encontrar o botão mais próximo
+    const button = event.target.closest('BUTTON'); 
 
-    if (!button) return; // Se não encontrou um botão, sai da função
+    if (!button) return;
 
     const pokemon = button.querySelector('.number').textContent.replace('#', '');
+    
     loadPokemonAbout(pokemon);  
 });
 
@@ -124,6 +125,7 @@ modal.addEventListener("click", (event) => {
     if (event.target.classList.contains("close")) {
         modal.style.display = "none";
     }
+    document.body.classList.remove("no-scroll");
 });
 
 window.addEventListener("click", (event) => {
@@ -132,6 +134,7 @@ window.addEventListener("click", (event) => {
     if (event.target === modal) {
         modal.style.display = "none";
     }
+    document.body.classList.remove("no-scroll");
 });
 
 

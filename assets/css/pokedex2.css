@@ -6,7 +6,7 @@
 }
 
 .paginaPokemon {
-    height: 26rem;
+    height: 25rem;
     border-radius: 2rem;
     position: relative;
     z-index: 1;
@@ -30,7 +30,7 @@
     font-size: 34px;
     font-weight: 200;
     position: absolute;
-    top: 12px;
+    top: 5px;
     left: 30px;
     cursor: pointer;
   }
@@ -79,7 +79,7 @@
     color: #fff;
     text-transform: capitalize;
     text-align: left;
-    margin: 2rem 0 0 0;
+    margin: 0.5rem 0 0 0;
 }
 
 .paginaPokemon .detailPagina {
@@ -169,7 +169,6 @@
 .progressBarHp, .progressBarDf, .progressBarAt {
     width: 60%;
     height: 4px; 
-    /* background-color: #dbdada;  */
     border-radius: 5px; 
     margin-bottom: 20px;
 }
@@ -210,11 +209,11 @@
 
 @media screen and (min-width: 300px) {
     .paginaPokemon {
-        margin: 2rem 1rem 0 1rem;
+        margin: 1rem 1rem 0 1rem;
         
     }
     .paginaPokemonBottom {
-        margin: 2rem 1rem 0 1rem;
+        margin: 1rem 1rem 0 1rem;
     }
 
 }

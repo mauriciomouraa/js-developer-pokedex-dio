@@ -7,11 +7,17 @@
 
 body {
     background-color: #cdcde6;
+   
+}
+
+.no-scroll {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
 }
 
 /* Impede que a imagem seja selecionada */
 img {
-    
     pointer-events: none; 
 }
 
